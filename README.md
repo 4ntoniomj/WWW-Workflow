@@ -37,14 +37,11 @@ jobs:
       # Prepare the context for GitHub Pages to accept a deploy from that workflow.
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
       # Uploading files to GitHub internal storage.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+	with:
+	  path: .
 
   deploy:
     environment:
